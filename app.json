@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/weather/weather",
+    "pages/table0/index",
+    "pages/personal/personal"
+  ],
+  "window": {
+    "navigationBarBackgroundColor":"#40a7e7",
+    "navigationBarTitleText":"天气课程表",
+    "navigationBarTextStyle":"white",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#40a7e7",
+    "list": [
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "首页",
+        "iconPath":"images/icon/1.png",
+        "selectedIconPath":"images/icon/11.png"
+      },
+      {
+        "pagePath": "pages/table0/index",
+        "text": "课程表",
+        "iconPath": "images/icon/3.png",
+        "selectedIconPath": "images/icon/33.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/icon/2.png",
+        "selectedIconPath": "images/icon/22.png"
+      }
+    ]
+  }
+}

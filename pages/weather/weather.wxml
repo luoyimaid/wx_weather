@@ -1,0 +1,70 @@
+
+
+<view class="wrapper">
+<!-- 搜索框 -->
+  <view class='search' wx:if='{{!setting.hiddenSearch}}' style='background:rgba(255, 255, 255, 0)'>
+    <view class='wrapper1'>
+      <image src='../../images/pic/search.png'></image>
+      <input placeholder-class='placeholderClass' confirm-type='search' placeholder='查询其他城市' maxlength='20' bindconfirm='commitSearch' value='{{searchText}}' disabled='{{!enableSearch}}'></input>
+    </view>
+  </view>
+<!-- 搜索框 -->
+
+  <view class="curWeather">
+    <view class="curTemperature">
+    <image class="weathericon" src="../../images/pic/cloud.png"></image>
+      <view class="city">{{city}}  {{district}}</view>
+      <view class="street">{{street}}</view>
+      <view class="tmp">{{now.tmp}}°</view>
+      <view class="aircond">AQI:{{now.cond_code}} | {{now.cond_txt}}</view>
+    </view>
+    <view class="curExtern">
+      <view class="wind">
+        <view class="">{{now.wind_dir}}</view>
+        <view wx:if="{{now.wind.sc=='微风'}}" class="val">{{"<="}}2级</view>
+        <view wx:else class="val">{{now.wind_sc}}级</view>
+      </view>
+      <view class="line"></view>
+      <view class="relWet">
+        <view class="">相对湿度</view>
+        <view class="val">{{now.hum}}%</view>
+      </view>
+      <view class="line"></view>
+      <view class="humanTmp">
+        <view class="">体感温度</view>
+        <view class="val">{{now.fl}}°C</view>
+      </view>
+    </view>
+  </view>
+  <view class="forecast">
+    <block wx:for="{{cityDatas.originalData.results[0].weather_data}}">
+      <view class="castItem"  wx:if="{{index > 0}}">
+        <view class="castDay">{{item.date}}</view>
+        <view class="castType">
+          <text>{{item.weather}}</text>
+          
+        </view>
+        <view class="castTmp">
+          {{item.temperature}}
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class='content' style='margin-top: {{setting.hiddenSearch ? 20 : 60}}px'>
+<view class='livingIndex' wx:if='{{cityDatas.originalData.results[0].index && !setting.hiddenIndex}}'>
+    <view class='item' wx:for='{{cityDatas.originalData.results[0].index}}' wx:key='{{index}}'>
+        <image class='icon' src='{{icons[index]}}'></image>
+        <view class='right'>
+          <view class='key'>{{item.tipt}} {{item.zs}}</view>
+          <view class='value'>{{item.des}}</view>
+        </view>
+    </view>
+</view>
+</view>
+</view>
+
+<!--生活提醒 begin  -->
+
+<!-- 生活提醒 end -->

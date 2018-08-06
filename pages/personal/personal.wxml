@@ -1,0 +1,19 @@
+<!--pages/personal/personal.wxml-->
+<view class="top1">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login"> 登录 </button>
+
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </block>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+     <text class="level">LV{{level}}</text>
+    <text class="b">余额：0.0</text>
+    <text class="yb">积分：{{points}}</text>
+    <image class="qianbao" src="../../images/pic/qianbao.png" mode="cover"></image>
+    <image class="xlogo" src="../../images/pic/xlogo.png" mode="cover"></image>
+</view>
+<view class="list" bindtap='click0' style='color:{{color0}}; background-color:{{bcolor0}}'>首页</view>
+<view class="list" bindtap='click1' style='color:{{color1}}; background-color:{{bcolor1}}'>我的会员</view>
+<view class="list" bindtap='click2' style='color:{{color2}}; background-color:{{bcolor2}}'>联系客服</view>
+<view class="list" bindtap='click3' style='color:{{color3}}; background-color:{{bcolor3}}'>检查更新</view>
+<button wx:if="{{hasUserInfo || !canIUse}}" open-type="clear" bindgetuserinfo="clear" bindgetuserinfo="clear" class="login"> 退出登录 </button>

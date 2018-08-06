@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="top">
+  <view wx:for="{{['一','二','三','四','五','六','日']}}" class="top-text">周{{item}}</view>
+</view>
+
+<scroll-view scroll-y="true" class="scroll">
+  <view style="height:1000rpx;width:730rpx;display:flex;">
+    <view style="background-color:#40a7e7;color:white;">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" class="left">
+        {{item}}
+      </view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}">
+      <view style="width:750rpx;margin-top:{{(index+1)*100}}rpx;  position: absolute;border-bottom:1rpx solid {{index==3?'#40a7e7':'#c5e0f3'}};">
+      </view>
+    </view>
+
+    <!--课表-->
+    <view wx:for="{{wlist}}">
+      <view class="flex-item kcb-item" bindtap="jump" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.xqj-1)*100}}rpx;margin-top:{{(item.skjc-1)*100+5}}rpx;height:{{item.skcd*100-5}}rpx;background-color:{{colorArrays[item.xqj-1]}};border:solid 3rpx;border-color:{{colorArrays0[item.xqj-1]}}">
+        <view class="smalltext" style="color:{{colorArrays1[item.xqj-1]}}">{{item.kcmc}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+<image src="../../images/pic/plus.png" class="menu11" bindtap='settime'
+></image>
+
+<!-- 隐藏区域 begin-->
+
+<view class='maskLayer' wx:if="{{addclass}}" bindtap='hidemodel'></view>
+<view class='choose' wx:if='{{addclass}}' animation='animationData'>
+  <input class="inputclass" placeholder='请输入课程'  bindinput="classInput" ></input>
+  <input class="inputroom" placeholder='请输入教室' bindinput="roomInput"></input>
+  
+  <view class='tc'>
+        <picker bindchange="changeTc" mode="selector" range="{{week.tcs}}" value="{{week.tc}}">
+           星期选择: <text>{{week.tcs[week.tc]}}</text>
+        </picker>
+  </view>
+
+  <view class='js1'>
+        <picker bindchange="changeJs" mode="selector" range="{{js.tcs}}" value="{{js.tc}}">
+           开始时间: <text>{{js.tcs[js.tc]}}</text>
+        </picker>
+  </view>
+
+  <view class='js2'>
+        <picker bindchange="changeJs2" mode="selector" range="{{js2.tcs}}" value="{{js2.tc}}">
+           结束时间: <text>{{js2.tcs[js2.tc]}}</text>
+        </picker>
+  </view>
+
+  <view class="confirm" bindtap='confirm'>确定</view>
+  <view class="quit" bindtap='quit'>取消</view>
+
+
+</view>
+
+
+
+
+<!-- 隐藏区域 end -->

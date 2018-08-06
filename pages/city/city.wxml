@@ -1,0 +1,46 @@
+<!-- pages/city/city.wxml
+<text>pages/city/city.wxml</text>
+<button type='default' >点我</button>
+
+<image src = "{{srcc}}" mode='aspectFit'></image> -->
+<!-- 顶部导航 begin -->
+<!-- <import src = "../common/item.wxml"> -->
+
+<!-- <view class = "wrapper"> -->
+  <!-- 顶部导航 begin -->
+    <include src = "../common/header.wxml"/>
+  <!-- 顶部导航 end -->
+  <!-- <view class = "nav-scroll">
+    <scroll-view class = "scroll-view_H" scroll-x = "true" style = "width: 100%">
+    <text wx:for="{{section}}" wx:key="id" id = "{{item.id}}" catchtap = "handleTap" class ="nav-name {{item.id == currentId ? 'nav-hover' : ''}}" style = "padding-right:{{topdistance}}px;padding-left:{{topdistance}}px">{{item.name}}
+    </text>
+ 
+    </scroll-view>
+  </view>
+</view>
+ -->
+
+
+<!-- 正在直播 begin' -->
+<!-- <view class = "row-contianer">
+    <navigator class = "header">
+      <view class = "left">
+        <view class = "bilibili-index-sprite-live">
+        <image src = "../../images/pic/zhibo.png"></image>
+        </view >
+          <text>正在直播</text>
+          </view>
+        <view class = "right">
+          <text>查看更多直播</text>
+          <view class = "bilibili-index-sprite-arrow">
+            <image src = "../../images/pic/gengduo.png"></image>
+          </view>
+        </view>
+    </navigator>
+    <view class="content-wrapper"> -->
+        <!-- <block wx:for="{{liveList}}" wx:key="avid"> -->
+          <!-- 使用正在直播模板，传入当前循环对象item -->
+          <!-- <template is="jiefItem2" data="{{...item}}"/>
+        </block>
+      </view>
+</view>  -->

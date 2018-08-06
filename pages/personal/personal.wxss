@@ -1,0 +1,81 @@
+/* pages/personal/personal.wxss */
+.login {
+  width: 250rpx;
+  height: 90rpx;
+  position:absolute;
+  top: 800rpx;
+  left: 250rpx;
+}
+.userinfo-avatar {
+  position: fixed;
+  width:120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 3rpx solid white;
+}
+.top1{
+  width:all;
+  height:300rpx;
+  background: #40a7e7;
+  position: relative; 
+  z-index: -2;
+}
+.userinfo-nickname{
+  display: flex;
+  flex-direction: column;
+  color:white;
+  position: absolute;
+  top: 150rpx;
+  left: 30rpx;
+}
+.level{
+  width: 60rpx;
+  height: 28rpx;
+  color: white;
+  border-radius: 15%;
+  border:2rpx solid white;
+  position: absolute;
+  top: 160rpx;
+  left: 200rpx;
+  font-size: 25rpx;
+  line-height: 28rpx;
+  text-align: center;
+}
+.b{
+  color: rgb(230, 230, 230);
+  position: absolute;
+  left: 29rpx;
+  top: 220rpx;
+  font-size: 30rpx;
+}
+.yb{
+  color: rgb(230, 230, 230);
+  position: absolute;
+  left: 200rpx;
+  top: 220rpx;
+  font-size: 30rpx;
+  z-index: 1;
+}
+.qianbao {
+  width:75rpx;
+  height: 75rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 30rpx;
+}
+.list{
+  width:all;
+  height:80rpx;
+  padding-left: 150rpx;
+  padding-top: 30rpx;
+  font-size: 30rpx;
+}
+.xlogo{
+  width:400rpx;
+  height:400rpx;
+  position: absolute;
+  right:100rpx;
+  top:30rpx;
+  z-index: -1;
+}
